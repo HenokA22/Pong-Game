@@ -142,7 +142,10 @@ function collision(ball, player) {
     player.right = player.x + player.width
 
     //if any one of these conditions are true then a collison occured
-    //unsure for right now why we are using && instead of ||
+    // left hand of first && used for right side collision
+    // right hand of second && used for left side collision
+    // the other conditions are used to make sure if the ball is between
+    // extremas of the paddles when collsion occurs.
     return ball.right > player.left && ball.bottom > player.top 
             && ball.left < player.right && ball.top < player.bottom;
 }
